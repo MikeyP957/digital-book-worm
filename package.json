@@ -1,0 +1,19 @@
+{
+  "name": "digital-book-worm",
+  "version": "1.0.0",
+  "description": "A place to find and record books of interest.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeyP957/digital-book-worm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeyP957/digital-book-worm/issues"
+  },
+  "homepage": "https://github.com/MikeyP957/digital-book-worm#readme"
+}
