@@ -11,6 +11,7 @@ const bookSchema = new Schema({
         type: Text,
         required: false,
     },
+    date: { type: Date, default: Date.now },
     imageLink: {
         type: String,
         required: false,
