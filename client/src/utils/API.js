@@ -17,10 +17,11 @@ export default {
         return axios.post('/api/books', bookData);
     },
     googleBook: function(query) {
-        const key = process.env.GbookAPIkey;
-        const url = `https://www.googleapis.com/books/v1/volumes?`;
+        const key = 'AIzaSyDHaFXlZjbuxINwYBJiU_cSanGEYXU_Wag';
+        const url = `https://www.googleapis.com/books/v1/volumes?q=`;
         
         return axios.get(`${url}${query}&key=${key}`);
+
     }
 
 
