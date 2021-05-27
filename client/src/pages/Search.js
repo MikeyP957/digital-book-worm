@@ -1,35 +1,60 @@
-import React, { Component, useState, useEffect } from 'react'
-import API from '../utils/API';
+import React, { useState, useEffect } from 'react'
+import API from '../utils/API'
+import BookCard from '../components/BookCard'
+import Button from 'react-bootstrap/Button'
 
-//components
-import { ViewBtn, SaveBtn } from '../components/Buttons';
-import { Col, Row, Container } from '../components/Grid';
-import { Input, TextArea, FormBtn } from '../components/Form';
-import Wrapper from '../components/Wrapper';
-import Nav from '../components/Nav';
+export default function Search() {
+    const [data, setData] = useState([]);
+    const [query, setQuery] = useState('');
+
+  
+
+    // useEffect((book) => {
+    //     API.getBooks(book)
+    //         .then((response) => response.json())
+    //         .then((json) => console.log(json))
+    // },[])
+
+    function searchHandler(e) {
+        const mySentence = query;
+        console.log(mySentence)
+        
+        const finalSentence = mySentence.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+        console.log(finalSentence)
 
 
+        API.googleBook(finalSentence)
+            .then((response) => setData(response))
 
-class Search extends Component {
-    state = {}
+        console.log(data)
+        // const columns = rows[0] && Object.keys(rows[0]);
+        
+        // return (
 
-    render() {
-        <Wrapper>
-            <Nav/>
-            <Container>
-                <p>title</p>
-            </Container>
-            <Container>
-                
-            </Container>
-        </Wrapper>
-        //title
-        //container
-        //search bar
-        //container
-        //book card
-        //results list
-            //view button
-            //save button
+        //     rows.filter((row) => columns.some((column) => row[column].toString().toLowerCase().indexOf(query.toString()) > -1          
+        //     ))
+
+        //     )
+        
+
     }
+
+
+    return(
+        <div>
+            <div>
+
+                <input type= "text" onChange={event => setQuery(event.target.value)}/>
+                <Button onClick= {searchHandler} >Search</Button>
+            </div>
+                
+            <div>
+            <BookCard title= {data.title}
+                      image={data.image}
+                      description = {data.discription}
+            
+            />
+            </div>
+        </div>
+    )
 }
