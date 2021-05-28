@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 export default function Search() {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState('');
+    const [nothing, thisisnothing]= useState([])
 
   
 
@@ -16,45 +17,44 @@ export default function Search() {
     // },[])
 
     function searchHandler(e) {
+        //the api takes words with the primary letter in each word capitalized
         const mySentence = query;
         console.log(mySentence)
-        
+            //this regex takes the first letter of each word and capitalizes it.
         const finalSentence = mySentence.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         console.log(finalSentence)
 
 
         API.googleBook(finalSentence)
-            .then((response) => setData(response))
+            .then((response) => setData(response.data.items))
 
         console.log(data)
-        // const columns = rows[0] && Object.keys(rows[0]);
-        
-        // return (
-
-        //     rows.filter((row) => columns.some((column) => row[column].toString().toLowerCase().indexOf(query.toString()) > -1          
-        //     ))
-
-        //     )
-        
-
     }
-
-
-    return(
-        <div>
+  
+    (data[0]) ? console.log('data[0] is something', data[0]): console.log('its nothing...')
+        return(     
+         
+            <div>
             <div>
 
                 <input type= "text" onChange={event => setQuery(event.target.value)}/>
                 <Button onClick= {searchHandler} >Search</Button>
             </div>
-                
-            <div>
-            <BookCard title= {data.title}
-                      image={data.image}
-                      description = {data.discription}
+             {data.length ? (
+             <div>
+            <BookCard title= {data[0].volumeInfo.title}
+                      image={data[0].volumeInfo.imageLinks.thumbnail}
+                      authors = {data[0].volumeInfo.authors[0]}
+                      description = {data[0].volumeInfo.description}
             
             />
-            </div>
-        </div>
+            </div> 
+             ) : (
+                <h4>Search for a book!</h4>
+             )
+             }   
+
+        </div>               
     )
+
 }
