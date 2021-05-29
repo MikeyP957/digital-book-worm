@@ -15,8 +15,7 @@ export default function BookCard(props) {
                 <br/>
                 {props.description}
               </Card.Text>
-              <Button variant="primary">{props.btn1}props1</Button>
-              <Button variant="primary">{props.btn2}props 2</Button>
+
             </Card.Body>
           </Card>
        
