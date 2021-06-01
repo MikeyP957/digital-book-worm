@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import API from '../utils/API'
-import BookCard from '../components/BookCard'
+import SaveBookCard from '../components/SaveBookCard'
 import Button from 'react-bootstrap/Button'
 
 export default function Search() {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState('');
-    // const [savedBook, setSaved] = useState({})
+   
 
 
     function searchHandler(e) {
@@ -24,14 +24,14 @@ export default function Search() {
         console.log(data)
     }
 
-    function someSaveFunction(e) {
-        console.log('some save function...')
-    }
+    
+
+
   
     (data[0]) ? console.log('data[0] is something', data[0]): console.log('its nothing...')
-    return(     
-         
+    return(         
         <div>
+            
             <div>
 
                 <input type= "text" onChange={event => setQuery(event.target.value)}/>
@@ -41,15 +41,14 @@ export default function Search() {
                 <div className='container row'>
                     {data.map((book) => (
                         <div>
-                        <BookCard 
+                        <SaveBookCard 
                             key= {book.id}
                             title= {book.volumeInfo.title}
                             
                             authors = {book.volumeInfo.authors}
                             description = {book.volumeInfo.description}
                         />
-                        <Button variant="primary">View Description</Button>
-                        <Button onClick= {someSaveFunction} variant="primary">Save Book to Library</Button>
+
                         </div>
                     ))}
                 </div>
@@ -62,3 +61,5 @@ export default function Search() {
 }
 
 // image={book.volumeInfo.imageLinks.thumbnail}
+
+// }
