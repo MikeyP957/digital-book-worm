@@ -32,7 +32,8 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
-    "react-bootstrap": "^1.6.0"
+    "react-bootstrap": "^1.6.0",
+    "react-router-dom": "^5.2.0"
   },
   "homepage": "https://github.com/MikeyP957/digital-book-worm#readme"
 }
