@@ -17,7 +17,7 @@ export default {
         return axios.post('/api/books', bookData);
     },
     googleBook: function(query) {
-        const key = 'AIzaSyDHaFXlZjbuxINwYBJiU_cSanGEYXU_Wag';
+        const key = process.env.REACT_APP_GOOGLEBOOK_API_KEY;
         const url = `https://www.googleapis.com/books/v1/volumes?q=`;
         
         return axios.get(`${url}${query}&key=${key}`);
