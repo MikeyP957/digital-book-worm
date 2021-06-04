@@ -4,16 +4,14 @@ import Button from 'react-bootstrap/Button'
 
 
 
-export default function BookCard(props) {
+export default function Header(props) {
    return (
             <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={props.image || "https://www.fillmurray.com/640/360" } />
+            <Card.Img variant="top" src={props.image} />
             <Card.Body>
-              <Card.Title>{props.title}</Card.Title>
+              <Card.Title>Google Books Search</Card.Title>
               <Card.Text>
-                {props.authors}
-                <br/>
-                {props.description}
+                A place to search for books and save for future reading.
               </Card.Text>
 
             </Card.Body>
