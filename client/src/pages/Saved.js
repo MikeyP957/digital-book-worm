@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import API from '../utils/API';
+import Header from '../components/Header';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import BookCard from '../components/BookCard';
 import Row from 'react-bootstrap/Row';
+import '../App.css'
 
 
 function Saved () {
@@ -29,20 +31,20 @@ function Saved () {
     },[])
 
     return(
-      <Container>
+      <div> 
+        <Header />
+        <Container>
         {books.length ? (
           <div className="container row" loading="lazy">
             {books.map((aBook) => (
               <BookCard
               key={aBook._id}
               authors= {aBook.authors}
+              image= {aBook.imageLink}
               title= {aBook.title}
               description={aBook.description}
-              />
-              
-            )
-
-            )}
+              />              
+            ))}
           </div>
         ) : (
           <div>
@@ -50,6 +52,8 @@ function Saved () {
           </div>
         ) }
       </Container>
+
+      </div>      
     )
 
 
