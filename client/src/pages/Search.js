@@ -3,6 +3,10 @@ import API from '../utils/API'
 import SaveBookCard from '../components/SaveBookCard'
 import Header from '../components/Header'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import 'react-bootstrap'
 import '../App.css'
 
 export default function Search() {
@@ -25,15 +29,18 @@ export default function Search() {
  
 
     return(         
-        <div>
+        <Container  fluid='md'>
             <Header />
-            <div>
-
-                <input type= "text" onChange={event => setQuery(event.target.value)}/>
+            <div className="justify-content-center search-bar pt-4 row" >
+            <Col xs={8} sm={8} md={6}>
+                <input className=" form-control" type= "text" onChange={event => setQuery(event.target.value)}/>
+            </Col>
+            <Col xs={2} sm={2} md={2}>
                 <Button onClick= {searchHandler} >Search</Button>
+            </Col>
             </div>
             {data.length ? (
-                <div className='container row'>
+                <Row>
                     {data.map((book) => (
                         <div>
                         <SaveBookCard
@@ -46,11 +53,11 @@ export default function Search() {
 
                         </div>
                     ))}
-                </div>
+                </Row>
             ) : (
                 <h4>Search for a book!</h4>
             )}
-        </div>               
+        </Container>               
     )
 }
 

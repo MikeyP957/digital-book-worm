@@ -7,12 +7,18 @@ import '../../App.css'
 
 export default function BookCard(props) {
    return (
-            <Card className="book-card" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={props.image || "https://www.fillmurray.com/640/360" } />
+            <Card className="book-card" style={{ width: '75rem' }}>
+            
             <Card.Body>
-              <Card.Title>{props.title}</Card.Title>
+              <Card.Header className ='card-title'>
+                <h3>
+                {props.title}
+                </h3>              
+              <h5>By: {props.authors.join(" & ")} </h5>
+              </Card.Header>
+              <Card.Img variant="top" src={props.image || "https://www.fillmurray.com/320/180" } />
               <Card.Text>
-                {props.authors}
+              
                 <br/>
                 {props.description}
               </Card.Text>
