@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A place to find and record books of interest.",
   "main": "server.js", 
+  "homepage": "https://MikeyP957.github.io/digital-book-worm",
   "scripts": {
    
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
