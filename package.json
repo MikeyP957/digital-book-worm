@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A place to find and record books of interest.",
   "main": "server.js",
+  "homepage": "https://MikeyP957.github.io/digital-book-worm",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -36,6 +39,6 @@
     "mongoose": "^5.3.16",
     "react-bootstrap": "^1.6.0",
     "react-router-dom": "^5.2.0"
-  },
-  "homepage": "https://github.com/MikeyP957/digital-book-worm#readme"
+  }
+
 }
