@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/digital-book-worm/static/css/main.248e30c8.chunk.css",
+    "main.js": "/digital-book-worm/static/js/main.5a39a3a2.chunk.js",
+    "main.js.map": "/digital-book-worm/static/js/main.5a39a3a2.chunk.js.map",
+    "runtime-main.js": "/digital-book-worm/static/js/runtime-main.0e032708.js",
+    "runtime-main.js.map": "/digital-book-worm/static/js/runtime-main.0e032708.js.map",
+    "static/js/2.a1cee6fe.chunk.js": "/digital-book-worm/static/js/2.a1cee6fe.chunk.js",
+    "static/js/2.a1cee6fe.chunk.js.map": "/digital-book-worm/static/js/2.a1cee6fe.chunk.js.map",
+    "index.html": "/digital-book-worm/index.html",
+    "static/css/main.248e30c8.chunk.css.map": "/digital-book-worm/static/css/main.248e30c8.chunk.css.map",
+    "static/js/2.a1cee6fe.chunk.js.LICENSE.txt": "/digital-book-worm/static/js/2.a1cee6fe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e032708.js",
+    "static/js/2.a1cee6fe.chunk.js",
+    "static/css/main.248e30c8.chunk.css",
+    "static/js/main.5a39a3a2.chunk.js"
+  ]
+}
