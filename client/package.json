@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MikeyP957.github.io/digital-book-worm",
   "proxy": "http://localhost:3001/",  
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
@@ -14,6 +15,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
